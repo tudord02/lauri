@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: blueviolet;
+    margin: 0;
+}
+
+.heart-container {
+    position: relative;
+}
+
+.heart {
+    position: relative;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    box-shadow: 0 4px 10px rgba(1, 1, 1, 1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+.text {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+.heart:active {
+    transform: scale(7);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
